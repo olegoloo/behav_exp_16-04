@@ -26,7 +26,7 @@ class Group(BaseGroup):
 
     def ost(group):
         if (group.sum_offer()) > 450:
-            return (f'Оставшиеся средства будут получены случайным игроком. Остаток: {group.sum_offer() - 450}₽')
+            return (f'Оставшиеся средства не будут возвращены. Остаток: {group.sum_offer() - 450}₽')
         else:
             return (" ")
 
