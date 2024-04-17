@@ -55,9 +55,8 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     balance = models.IntegerField(initial=1000)
-    porog_small = models.IntegerField(initial=450)
     porog_large = models.IntegerField(initial=900)
-
+    ostatok = self.balance - self.offer
     offer = models.IntegerField(label='Размер пожертвования:', min=0, max=1000)
 
     def role(self):
