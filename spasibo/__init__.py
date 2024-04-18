@@ -8,7 +8,7 @@ Your app description
 
 class C(BaseConstants):
     NAME_IN_URL = 'spasibo'
-    PLAYERS_PER_GROUP = None
+    PLAYERS_PER_GROUP = 8
     NUM_ROUNDS = 1
 
 
@@ -21,12 +21,24 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+
+    get = models.StringField(label='Как Вы хотите распорядиться своим выигрышем?',
+                             choices=['Забрать выигрыш',
+                                      'Сделать пожертвование в благотворительный фонд "Подари жизнь"'],
+                             widget=widgets.RadioSelect)
 
 
 # PAGES
-class MyPage(Page):
-    pass
+class WinnerPage(Page):
+    def is_displayed(self):
+        return self.id_in_group == 1 or self.id_in_group == 8
+    form_model = 'player'
+    form_fields = ['get']
+
+class NoWinPage(Page):
+    def is_displayed(self):
+        return self.id_in_group != 1 and self.id_in_group != 8
+    form_model = 'player'
 
 
-page_sequence = [MyPage]
+page_sequence = [WinnerPage, NoWinPage]
