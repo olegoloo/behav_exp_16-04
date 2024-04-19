@@ -27,13 +27,15 @@ class Player(BasePlayer):
                                       'Сделать пожертвование в благотворительный фонд "Подари жизнь"'],
                              widget=widgets.RadioSelect)
 
+    contact = models.StringField(label='Если вы хотите получить выигрыш, оставьте свой контакт тут, с вами свяжутся для уточнения деталей')
+
 
 # PAGES
 class WinnerPage(Page):
     def is_displayed(self):
         return self.id_in_group == 1 or self.id_in_group == 8
     form_model = 'player'
-    form_fields = ['get']
+    form_fields = ['get', 'contact']
 
 class NoWinPage(Page):
     def is_displayed(self):
