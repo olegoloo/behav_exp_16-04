@@ -4,7 +4,7 @@ SESSION_CONFIGS = [
     dict(
         name='Four_people_session',
         display_name='Эксперимент 3 донора + 1 получатель',
-        app_sequence=['testapp', 'testapp_2'],
+        app_sequence=['testapp', 'testapp_2', 'spasibo'],
         num_demo_participants = 8,
         info=False,
      ),
@@ -13,7 +13,7 @@ SESSION_CONFIGS = [
     dict(
         name='eight_people_session',
         display_name='Эксперимент 6 доноров + 2 получателя',
-        app_sequence=['testapp_2', 'testapp'],
+        app_sequence=['testapp_2', 'testapp', 'spasibo'],
         num_demo_participants = 8,
         info=False,
      ),
