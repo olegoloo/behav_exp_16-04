@@ -25,7 +25,7 @@ class Player(BasePlayer):
     get = models.StringField(label='Как Вы хотите распорядиться своим выигрышем?',
                              choices=['Забрать выигрыш',
                                       'Сделать пожертвование в благотворительный фонд "Подари жизнь"'],
-                             widget=widgets.RadioSelect, blank=True)
+                             widget=widgets.RadioSelect, blank=Trueб autoflush=False)
 
     contact = models.StringField(label='Если вы хотите получить выигрыш, оставьте свой контакт тут, с вами свяжутся для уточнения деталей', blank=True)
 
