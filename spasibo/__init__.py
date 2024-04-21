@@ -24,17 +24,17 @@ class Player(BasePlayer):
 
    
 
-# PAGES
 class WinnerPage(Page):
+    form_model = 'player'
     def is_displayed(self):
         return self.id_in_group == 1 or self.id_in_group == 8
-    form_model = 'player'
     
-
+    
 class NoWinPage(Page):
+    form_model = 'player'
     def is_displayed(self):
         return self.id_in_group != 1 and self.id_in_group != 8
-    form_model = 'player'
+    
 
 
 page_sequence = [WinnerPage, NoWinPage]
