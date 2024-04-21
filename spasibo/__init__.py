@@ -22,22 +22,14 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 
-#    get = models.StringField(label='Как Вы хотите распорядиться своим выигрышем?',
-#                             choices=['Забрать выигрыш',
- #                                     'Сделать пожертвование в благотворительный фонд "Подари жизнь"'],
-    #                       widget=widgets.RadioSelect, blank=Trueб autoflush=False)
-
-    contact = models.StringField(label='Если вы хотите получить выигрыш, оставьте свой контакт тут, с вами свяжутся для уточнения деталей', blank=True)
-
+   
 
 # PAGES
 class WinnerPage(Page):
     def is_displayed(self):
         return self.id_in_group == 1 or self.id_in_group == 8
     form_model = 'player'
-    form_fields = [
-#        'get', 
-        'contact']
+    
 
 class NoWinPage(Page):
     def is_displayed(self):
