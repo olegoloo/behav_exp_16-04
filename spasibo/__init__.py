@@ -27,8 +27,7 @@ class Player(BasePlayer):
                                       'Сделать пожертвование в благотворительный фонд "Подари жизнь"'],
                              widget=widgets.RadioSelect, blank=True)
 
-    contact = models.StringField(label='Если вы хотите получить выигрыш, оставьте свой контакт тут,
-    с вами свяжутся для уточнения деталей', blank=True)
+    contact = models.StringField(label='Если вы хотите получить выигрыш, оставьте свой контакт тут, с вами свяжутся для уточнения деталей', blank=True)
 
 
 # PAGES
